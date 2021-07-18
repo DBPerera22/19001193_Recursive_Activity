@@ -1,0 +1,17 @@
+// 1st question
+// Index No: 19001193
+  def GCD(a:Int, b:Int):Int=b match {
+  case 0        => a
+  case x if b>a => GCD(b,a)
+  case _        => GCD(b,a%b)
+}
+
+def CheckPrime(n:Int,y:Int=2):Boolean=y match{
+
+case x if(x==n) => true
+case x if GCD(n,x)>1 => false
+case x=> CheckPrime(n,x+1)
+}
+
+println(CheckPrime(8))
+println(CheckPrime(13))
