@@ -1,0 +1,27 @@
+// 5th question
+// Index No: 19001193
+object FifthQ{
+
+  def main(args: Array[String]): Unit = {
+    println(AddEven(10))
+  }
+
+  def AddEven(n: Int): Int = {
+    if (n < 2) {
+      0
+    } else {
+      if (!CheckOdd(n)) {
+        n + AddEven(n - 1)
+      } else {
+        AddEven(n - 1)
+      }
+    }
+  }
+
+  def CheckEven(n: Int): Boolean = n match {
+    case 0 => true
+    case _ => CheckOdd(n - 1)
+  }
+
+  def CheckOdd(n: Int): Boolean = !CheckEven(n)
+}

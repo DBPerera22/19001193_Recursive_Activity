@@ -1,0 +1,29 @@
+// 2nd question
+// Index No: 19001193
+object SecondQ {
+  def main(args: Array[String]): Unit = {
+    PrimeSeq(10)
+  }
+
+  def PrimeSeq(n: Int): Unit = {
+    if (n > 2) {
+      PrimeSeq(n - 1)
+    }
+
+    if (CheckPrime(n)) {
+      println(n)
+    }
+  }
+
+  def CheckPrime(n: Int, p: Int = 2): Boolean = p match {
+    case x if x == n        => true
+    case x if GCD(n, x) > 1 => false
+    case _                  => CheckPrime(n, p + 1)
+  }
+
+  def GCD(a: Int, b: Int): Int = b match {
+    case 0          => a
+    case x if x > a => GCD(x, a)
+    case _          => GCD(b, a % b)
+  }
+}

@@ -1,0 +1,8 @@
+// 3rd question
+// Index No: 19001193
+def SumofInt(n:Int):Int= {
+      if(n<=1)  n
+      else  n + SumofInt(n-1)
+    }
+
+print(SumofInt(5))

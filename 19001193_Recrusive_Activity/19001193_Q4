@@ -1,0 +1,12 @@
+// 4th question
+// Index No: 19001193
+def CheckEven(n:Int) :Boolean= n match{
+
+  case 0 => true
+  case _ => CheckOdd(n-1)
+}
+
+def CheckOdd(n:Int):Boolean = !(CheckEven(n))
+
+println(CheckEven(8))
+println(CheckOdd(8))
